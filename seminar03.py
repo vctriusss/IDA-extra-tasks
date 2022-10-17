@@ -75,15 +75,28 @@ def check_sum2(arr: list, N: int) -> list:
     return pairs
 
 
-assert check_sum2([0, 1, 2, 3, 4, 5, 6, 7], 7) == [
-    (0, 7), (1, 6), (2, 5), (3, 4)]
+def check_sum2_optimized(arr: list, N: int) -> list:
+    l, r = 0, len(arr) - 1
+    pairs = []
+    while l != r:
+        s = arr[l] + arr[r]
+        if s == N:
+            pairs.append((arr[l], arr[r]))
+            l += 1
+        elif s < N:
+            l += 1
+        else:
+            r -= 1
+    return pairs
+
+assert check_sum2_optimized([0, 1, 2, 3, 4, 5, 6, 7], 7) == check_sum2([0, 1, 2, 3, 4, 5, 6, 7], 7) == [(0, 7), (1, 6), (2, 5), (3, 4)]
 
 # Task 3. Three numbers with summ N
 
 
 def check_sum3(arr: list, N: int) -> list:
     triplets = []
-    triplet_sets = []
+    triplet_sets = set()
     for i, el1 in enumerate(arr):
         for j, el2 in enumerate(arr[i:]):
             if i == j:
@@ -95,9 +108,9 @@ def check_sum3(arr: list, N: int) -> list:
             if ind != -1:
                 needed_ind_add = 0 if ind < less else 1 if less < ind + 1 < more else 2
                 triplet = (el1, el2, arr[ind + needed_ind_add])
-                if set(triplet) not in triplet_sets:  # making unique triplets (optional)
+                if tuple(set(triplet)) not in triplet_sets:  # making unique triplets (optional)
                     triplets.append(triplet)
-                    triplet_sets.append(set(triplet))
+                    triplet_sets.add(tuple(set(triplet)))
     return triplets
 
 
