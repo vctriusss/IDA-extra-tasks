@@ -19,19 +19,22 @@ tests = [
 
 
 def is_palindrome(s: str) -> bool:
-    i, j = 0, len(s) - 1
-    while i != j:
-        if not s[i].isalnum():
-            i += 1
-            continue
-        if not s[j].isalnum():
-            j -= 1
-            continue
-        if s[i].lower() != s[j].lower():
-            return False
-        i += 1
-        j -= 1
-    return True
+    s = ''.join(filter(lambda char: char.isalnum(), list(s))).lower()
+    return s == s[::-1]
+    # print(s)
+    # i, j = 0, len(s) - 1
+    # while i != j:
+    #     if not s[i].isalnum():
+    #         i += 1
+    #         continue
+    #     if not s[j].isalnum():
+    #         j -= 1
+    #         continue
+    #     if s[i].lower() != s[j].lower():
+    #         return False
+    #     i += 1
+    #     j -= 1
+    # return True
 
 
 def check_tests(pal_func: Callable[[str], bool], tests: Iterable[str]) -> list:
@@ -65,17 +68,19 @@ def bin_search(arr: list, goal: int) -> int:
     return -1
 
 
-def check_sum2(arr: list, N: int) -> list:
-    pairs = []
-    for i, el in enumerate(arr):
-        needed = N - el
-        ind = bin_search(arr[i+1:], needed)
-        if ind != -1:
-            pairs.append((el, arr[ind + i + 1]))
-    return pairs
+# def check_sum2(arr: list, N: int) -> list:
+#     pairs = []
+#     for i, el in enumerate(arr):
+#         needed = N - el
+#         ind = bin_search(arr[i+1:], needed)
+#         if ind != -1:
+#             pairs.append((el, arr[ind + i + 1]))
+#     return pairs
 
 
-def check_sum2_optimized(arr: list, N: int) -> list:
+def check_sum2_optimized(arr: list, N: int) -> list: # O(n)
+    if arr == []:
+        return []
     l, r = 0, len(arr) - 1
     pairs = []
     while l != r:
@@ -89,29 +94,25 @@ def check_sum2_optimized(arr: list, N: int) -> list:
             r -= 1
     return pairs
 
-assert check_sum2_optimized([0, 1, 2, 3, 4, 5, 6, 7], 7) == check_sum2([0, 1, 2, 3, 4, 5, 6, 7], 7) == [(0, 7), (1, 6), (2, 5), (3, 4)]
+assert check_sum2_optimized([0, 1, 2, 3, 4, 5, 6, 7], 7) == [(0, 7), (1, 6), (2, 5), (3, 4)]
 
 # Task 3. Three numbers with summ N
 
 
-def check_sum3(arr: list, N: int) -> list:
+def check_sum3_optimized(arr: list, N: int) -> list:  # now it's O(n^2)
     triplets = []
     triplet_sets = set()
     for i, el1 in enumerate(arr):
-        for j, el2 in enumerate(arr[i:]):
-            if i == j:
-                continue
-            needed = N - el1 - el2
-            less, more = i if i < j else j, j if i < j else i
-            slc = arr[:less] + arr[less + 1: more] + arr[more + 1:]
-            ind = bin_search(slc, needed)
-            if ind != -1:
-                needed_ind_add = 0 if ind < less else 1 if less < ind + 1 < more else 2
-                triplet = (el1, el2, arr[ind + needed_ind_add])
-                if tuple(set(triplet)) not in triplet_sets:  # making unique triplets (optional)
-                    triplets.append(triplet)
-                    triplet_sets.add(tuple(set(triplet)))
+        needed_sum2 = N - arr[i]
+        possible_pairs = check_sum2_optimized(arr[i + 1:], needed_sum2)
+        if not possible_pairs:
+            continue
+        for pair in possible_pairs:
+            triplet = (arr[i], pair[0], pair[1])
+            if tuple(set(triplet)) not in triplet_sets:
+                triplets.append(triplet)
+                triplet_sets.add(tuple(set(triplet)))
     return triplets
 
 
-print(check_sum3([0, 1, 2, 3, 4, 5, 6, 7], 8))
+print(check_sum3_optimized([0, 1, 2, 3, 4, 5, 6, 7], 8))
