@@ -70,3 +70,20 @@ text_corpus = [
 ]
 idfs = calc_idfs(text_corpus)
 print(calc_tfidf(term='котиков',text="Не ешьте котиков. Не ешьте мышь. Не ешьте сыр.",precomputed_idfs=idfs))
+
+# Task 4. Anagrams
+
+def anagrams(goal: str, s: str):
+    indexes = []
+    l = len(goal)
+    goal_counter = Counter(goal.lower())
+    for i in range(len(s) + 1 - l):
+        curr_counter = Counter(s.lower()[i: i + l])
+        if goal_counter == curr_counter:
+            indexes.append(i)
+    return indexes
+
+assert anagrams('abc', 'cbaebabacd') == [0, 6]
+
+# Shutter island :)
+assert anagrams('Edward Daniels', 'Andrew Laeddis') == anagrams('Dolores Chanal', 'Rachel Solando') == [0] 
