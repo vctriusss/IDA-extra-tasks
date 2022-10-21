@@ -76,14 +76,29 @@ print(calc_tfidf(term='котиков',text="Не ешьте котиков. Н�
 def anagrams(goal: str, s: str):
     indexes = []
     l = len(goal)
+    if l > len(s):
+        return []
     goal_counter = Counter(goal.lower())
-    for i in range(len(s) + 1 - l):
-        curr_counter = Counter(s.lower()[i: i + l])
+    curr_counter = Counter(s.lower()[:l])
+    if goal_counter == curr_counter:
+        indexes.append(0)
+
+    old_gen = (s[i] for i in range(len(s) + 1 - l))
+    new_gen = (s[i] for i in range(l, len(s)))
+    old_symb = next(old_gen)
+
+    for i in range(1, len(s) + 1 - l):
+        if curr_counter[old_symb] == 1:
+            del curr_counter[old_symb]
+        else:
+            curr_counter[old_symb] -= 1
+        curr_counter[next(new_gen).lower()] += 1 if i != 0 else 0
         if goal_counter == curr_counter:
             indexes.append(i)
+        old_symb = next(old_gen).lower()
     return indexes
 
-assert anagrams('abc', 'cbaebabacd') == [0, 6]
+assert anagrams('abc', 'cbaebabacdbca') == [0, 6, 10]
 
 # Shutter island :)
 assert anagrams('Edward Daniels', 'Andrew Laeddis') == anagrams('Dolores Chanal', 'Rachel Solando') == [0] 
