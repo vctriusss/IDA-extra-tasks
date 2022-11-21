@@ -1,0 +1,33 @@
+ФИО полностью	Роль	Группы	поток	yandex.ru	Телеграм
+Вознесенская Тамара Васильевна	Лектор и семинарист	ИАД-1, ИАД-2, ИАД-3	Python	tvozn@yandex.ru	@tvozn
+Дубнов Юрий Андреевич	Семинарист	ИАД-4, ИАД-5	Python	dubnovya@yandex.ru	@ydubn
+Косарев Илья 	Семинарист	ИАД-10	Python	ilyanapar@yandex.ru	@purePers
+Денис Беляков	Семинарист	ИАД-11, ИАД-12	Python	sanityseeker@ya.ru	@el_loco
+Крупица Полина Геннадьевна	Учебный ассистент	ИАД-8	Python	p.krupitsa@yandex.ru	@krupitsaa
+Довгополый Иоанн Алексеевич	Семинарист	ИАД-25	БД	ioanndovgopoliy@yandex.ru	@TriariiMisha
+Володин Даниил Александрович	Учебный ассистент	ИАД-6		d.lkem@yandex.ru	@d_lkem
+Кононов Алексей Максимович	Учебный ассистент	ИАД-27		alexkonon5041@yandex.ru	@water_stop
+Хамрин Роман Евгеньевич	Учебный ассистент	ИАД-26		hamrinroman@yandex.ru	@roman_khamrin
+Шерман Ксения Валерьевна	Учебный ассистент	ИАД-7		shermanksenia@yandex.ru	@dobroye_ytro
+Камаева Элина Петровна	Учебный ассистент	ИАД-5		camaewa.elina@yandex.ru	@elinkamaeva
+Исаев Михаил Валерьевич	Учебный ассистент	ИАД-12		michael1509@yandex.ru	@thomasparovoz
+Богачева Анна Андреевна	Учебный ассистент	ИАД-11		annabboga4eva@yandex.ru	@annjjjk
+Малкова Ксения Эдуардовна 	Учебный ассистент	ИАД-13		super.xu2014@yandex.ru	@ksu_marshmallow
+Краснокутская Александра Львовна	Семинарист	ИАД-9	Python	al.krasnokutskaya@yandex.ru	@alexandrakras
+Маркин Никита Александрович	Семинарист	ИАД-6, ИАД-8	Python	nmarkin96@yandex.ru	@NMarkin
+Шикунова Александра Сергеевна 	Учебный ассистент	ИАД-2		sgessenskaya@yandex.ru	@thnlgrlivrlvdwsbrnwthrssnhrys
+Князькова Виктория Игоревна	Учебный ассистент	ИАД-3		vknyazkova001@yandex.ru	@vknyazkova
+Трофименко Илья Александрович  	Учебный ассистент 	wiki		troila024@yandex.ru	@lneyronl
+Богатырева Ирина Сергеевна	Учебный ассистент	ИАД-4		irishairisha123@yandex.ru	@isbogatyreva
+Беким Амир	Учебный ассистент	ИАД-9		amirkauniverse@yandex.ru	@amirkauniverse
+Голубкова Анна Ярославовна 	Учебный ассистент 	ИАД-25		anya.golubkova11@yandex.ru	@anyaa_gl
+Рустамова Дарина Дмитриевна	Учебный ассистент	ИАД-29		kiskaper@yandex.ru	@jndooe
+Брейман Александр Давидович	Лектор	ИАД-26	БД	adbadb@yandex.ru	@abreyman
+Стрельцов Артем Дмитриевич	Семинарист	ИАД-7	Python	kekekekule@yandex.ru	@in_chainz
+Червяков Артем Александрович	Учебный ассистент	ИАД-1		arorlov97@yandex.ru	@arorlov
+Смоленчук Иван Константинович	Учебный ассистент	ИАД-7		ivansmolencuk@yandex.ru	@ongalek
+Никифоров Михаил Сергеевич	Учебный ассистент	ИАД-26		nikiforovmusha@yandex.ru	@caesiummm
+Лапин Александр Александрович	Учебный ассистент	ИАД-28		sanek.lapine@yandex.ru	@sanek_lapin
+Третьяков Дмитрий Витальевич	Семинарист	ИАД-13, ИАД-14	Python	tfdino@yandex.ru	@tfdino
+Сушкевич Лев Алексеевич	Семинарист	ИАД-27, ИАД-28	БД	levololoev@yandex.ru	@leviusss
+Ахременко Анна Андреевна	Семинарист	ИАД-29	БД		
